@@ -18,7 +18,7 @@ int Span::shortestSpan() const {
     std::sort(copy.begin(), copy.end());
 
     int minSpan = std::numeric_limits<int>::max();
-    for (size_t i = 1; i < copy.size(); ++i) {       // supscripte operator
+    for (size_t i = 1; i < copy.size(); ++i) {       // subscript operator
         int diff = copy[i] - copy[i - 1];
         if (diff < minSpan)
             minSpan = diff;
