@@ -1,10 +1,8 @@
-#include <iostream>
-#include <cstdlib>
 #include "Span.hpp"
 
 int main() {
     try {
-        Span sp = Span(5);
+        Span sp(5);
         sp.addNumber(6);
         sp.addNumber(3);
         sp.addNumber(17);

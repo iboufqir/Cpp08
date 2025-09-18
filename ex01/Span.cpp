@@ -1,8 +1,17 @@
 #include "Span.hpp"
 
+Span::Span() : _maxSize(0) {}
 Span::Span(unsigned int n) : _maxSize(n) {}
-
+Span::Span(const Span &other) : _maxSize(other._maxSize), _data(other._data) {}
 Span::~Span() {}
+
+Span &Span::operator=(const Span &other) {
+    if (this != &other) {
+        _maxSize = other._maxSize;
+        _data = other._data;
+    }
+    return *this;
+}
 
 void Span::addNumber(int number) {
     if (_data.size() >= _maxSize)
@@ -18,7 +27,7 @@ int Span::shortestSpan() const {
     std::sort(copy.begin(), copy.end());
 
     int minSpan = std::numeric_limits<int>::max();
-    for (size_t i = 1; i < copy.size(); ++i) {       // subscript operator
+    for (size_t i = 1; i < copy.size(); ++i) {
         int diff = copy[i] - copy[i - 1];
         if (diff < minSpan)
             minSpan = diff;

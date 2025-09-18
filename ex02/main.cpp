@@ -1,6 +1,4 @@
-#include <iostream>
 #include "MutantStack.hpp"
-#include <list>
 
 int main() {
     std::cout << "Testing MutantStack:" << std::endl;
